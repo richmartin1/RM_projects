@@ -22,11 +22,11 @@ This document contains the following details:
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly reliable, in addition to restricting access to the network.
-- What aspect of security do load balancers protect? Load balancers protect servers from overloading and helps the data move more efficiently.  What is the advantage of a jump box?_ The advantage of a jump box is that it is a secure computer that all administrators connect to first before completing administrative tasks on the network.  That way no administration tasks take should be completed outside of the jump box.  
+- What aspect of security do load balancers protect? Load balancers protect servers from overloading and helps the data move more efficiently.  What is the advantage of a jump box? The advantage of a jump box is that it is a secure computer that all administrators connect to first before completing administrative tasks on the network.   
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the system and system logs.
-- What does Filebeat watch for? Filebeatmonitors logs or locations specified and collects logged events and sends them to Elasticsearch or Logstash for examination and analysis.   
-- What does Metricbeat record? Metricbeat collects metrics and statistics from the operating system and services and then send them to Elasticsearch or Logstash for examination and analysis. 
+- What does Filebeat watch for? Filebeat monitors logs or locations specified and collects logged events and sends them to Elasticsearch or Logstash for examination and analysis.   
+- What does Metricbeat record? Metricbeat collects metrics and statistics from the operating system and services and then sends them to Elasticsearch or Logstash for examination and analysis. 
 
 The configuration details of each machine may be found below.
 
@@ -42,10 +42,10 @@ The configuration details of each machine may be found below.
 The machines on the internal network are not exposed to the public Internet. 
 
 Only the Jump Box (JBox) machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- Add whitelisted IP addresses_ 99.234.52.128
+- Add whitelisted IP addresses  99.234.52.128
 
 Machines within the network can only be accessed by the Jump Box (JBox).
-- Which machine did you allow to access your ELK VM? What was its IP address? My personal machine is the only machine that has access to The ELK server.  The IP address of the ELK machine is 52.170.18.55 
+- Which machine did you allow to access your ELK VM? What was its IP address? My personal virtual machine is the only machine that has access to The ELK server.  The IP address of the ELK machine is 52.170.18.55 
 
 A summary of the access policies in place can be found in the table below.
 
@@ -78,37 +78,39 @@ The following screenshot displays the result of running `docker ps` after succes
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- List the IP addresses of the machines you are monitoring
 
 Web1 - 13.64.128.17
 Web2 - 13.64.128.17
 
 We have installed the following Beats on these machines:
-- Specify which Beats you successfully installed:
+
 Web1 - Filebeat
 Web2 - Filebeat
 
 These Beats allow us to collect the following information from each machine:
-- In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc.
 
 Filebeat monitors log files or specific locations, then collects those events and then sends them to Elasticsearch or Logstash.  The data is easily visualized in Kibana 
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
-SSH into the control node and follow the steps below:
+SSH into the control node and follow the steps below
 - Copy Public key file to the target VM
 - Update the host file to include the domain of the target VM's
 - Run the playbook, and navigate to target VM to check that the installation worked as expected
 
 
-_Answer the following questions to fill in the blanks:_
-- Which file is the playbook? elkdocker1.yml is the playbook. Where do you copy it? It is copied into /etc/ansible
-- Which file do you update to make Ansible run the playbook on a specific machine? You update the host file.
+- Which file is the playbook? *elkdocker1.yml is the playbook.* Where do you copy it? *It is copied into /etc/ansible*
+- Which file do you update to make Ansible run the playbook on a specific machine? *Update the host file.*
 
-How do I specify which machine to install the ELK server on versus which to install Filebeat on? This is defined in the playbook.
+How do I specify which machine to install the ELK server on versus which to install Filebeat on? *This is defined in the playbook.*
 - Which URL do you navigate to in order to check that the ELK server is running? 
 
-http://[your.ELK-VM.External.IP]:5601/app/kibana
+*http://[your.ELK-VM.External.IP]:5601/app/kibana*
 
 As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc.
+
+curl *file location* > /etc/ansible/
+nano *filebeat-playbook.yml*
+nano *filebeat-config.yml*
+ansible-playbook *-vvv filebeat-playbook.yml*
