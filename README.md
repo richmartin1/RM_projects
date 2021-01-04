@@ -30,14 +30,14 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 
 The configuration details of each machine may be found below.
 
-| Name         | Function        | IP Address    | Operating System |
-|--------------|-----------------|---------------|------------------|
-| Jump Box     | Gateway         | 40.112.215.72 | Linux            |
-| Web1         | HTTP Traffic    | 10.0.0.5      | Linux            |
-| Web2         | HTTP Traffic    | 10.0.0.6      | Linux            |
-| ELK Server   | ELK Server      | 52.170.18.55  | Linux            |
-| Load Balancer| Exposed for HTTP| 13.64.128.17  |                  | 
-|              | Web1, Web2.     |               |                  |
+| Name         | Function                                | IP Address    | Operating System |
+|--------------|-----------------------------------------|---------------|------------------|
+| Jump Box     | Gateway                                 | 40.112.215.72 | Linux            |
+| Web1         | HTTP Traffic                            | 10.0.0.5      | Linux            |
+| Web2         | HTTP Traffic                            | 10.0.0.6      | Linux            |
+| ELK Server   | ELK Server                              | 52.170.18.55  | Linux            |
+| Load Balancer| Exposed Load Balancer for Web1 & Web2   | 13.64.128.17  |                  | 
+|              |                                         |               |                  |
 ### Access Policies
 
 The machines on the internal network are not exposed to the public Internet. 
@@ -65,7 +65,7 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 - What is the main advantage of automating configuration with Ansible? The main advantage is the time savings.  Instead of administrators spending a lot of time configuring machines manually with Ansible it can be a quick task.  It can also reduce bugs as the playbook configuration would be consistent.   
 
 The playbook implements the following tasks:
-- In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc. How do playbooks work how do they install each of these things focus on elk playbook and dvwa playbook
+
 - Created new virtual network (ELK network), in a new region and within the existing resource group
 - Created a peer connection to the existing virtual network 
 - Created a new virtual machine (ELK) within the new virtual network, and its own security group.
