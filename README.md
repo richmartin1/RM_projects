@@ -112,7 +112,7 @@ How do I specify which machine to install the ELK server on versus which to inst
 
 As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc.
 
-curl *file location* > /etc/ansible/
-nano *filebeat-playbook.yml*
-nano *filebeat-config.yml*
-ansible-playbook *-vvv filebeat-playbook.yml*
+- curl *file location* > /etc/ansible/
+- nano *filebeat-playbook.yml*
+- nano *filebeat-config.yml*
+- ansible-playbook *-vvv filebeat-playbook.yml*
