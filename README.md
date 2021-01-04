@@ -50,14 +50,14 @@ Machines within the network can only be accessed by the Jump Box (JBox).
 
 A summary of the access policies in place can be found in the table below.
 
-| Name          | Publicly Accessible | Allowed IP Addresses |
-|---------------|---------------------|----------------------|
-| Jump Box      | Only w/public key   | 99.234.52.128        |
-| Web1          | No                  | 40.112.215.72        |
-| Web2          | No                  | 40.112.215.72        |
-| Elk Server    | No                  |                      |
-| Load Balancer | Port 80 for Web1    |                      | 
-|               | Web2 HTTP Traffic   |                      |
+| Name          | Publicly Accessible     | Allowed IP Addresses |
+|---------------|-------------------------|----------------------|
+| Jump Box      | Only w/public key port22| 99.234.52.128        |
+| Web1          | No                      | 40.112.215.72        |
+| Web2          | No                      | 40.112.215.72        |
+| Elk Server    | No                      |                      |
+| Load Balancer | Port 80 for Web1 & Web2 |                      | 
+|               |    |                    |
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because its saves time by automating tasks.
