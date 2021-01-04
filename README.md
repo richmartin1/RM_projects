@@ -81,13 +81,13 @@ The following screenshot displays the result of running `docker ps` after succes
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
 
-Web1 - 13.64.128.17
-Web2 - 13.64.128.17
+- Web1 13.64.128.17
+- Web2 13.64.128.17
 
 We have installed the following Beats on these machines:
 
-Web1 - Filebeat
-Web2 - Filebeat
+- Web1 Filebeat
+- Web2 Filebeat
 
 These Beats allow us to collect the following information from each machine:
 
